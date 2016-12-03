@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table-responsive table-condensed">
+    <tr>
+        <td>
+            <div style="display:inline-block">
+                @Html.Label("Results")
+                @Html.TextBox("Results", "", new { @readonly = "readonly" })
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style="display:inline-block">
+                @Html.Label("Equation")
+                @Html.TextBox("Equation", "", new { @readonly = "readonly" })
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style="display:inline-block">
+                <input id="opMemAdd" class="btn btn-default CalcButton" type="button" value="M+">
+                <input id="opMemRecall" class="btn btn-default CalcButton" type="button" value="MR">
+                <input id="opClear" class="btn btn-default CalcButton" type="button" value="C">
+                <input id="opEval" class="btn btn-default CalcButton" type="button" value="=">
+            </div>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <div style="display:inline-block">
+                <input id="digit1" class="btn btn-default CalcButton" type="button" value="1">
+                <input id="digit2" class="btn btn-default CalcButton" type="button" value="2">
+                <input id="digit3" class="btn btn-default CalcButton" type="button" value="3">
+                <input id="opDiv" class="btn btn-default CalcButton" type="button" value="/">
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style="display:inline-block">
+                <input id="digit4" class="btn btn-default CalcButton" type="button" value="4">
+                <input id="digit5" class="btn btn-default CalcButton" type="button" value="5">
+                <input id="digit6" class="btn btn-default CalcButton" type="button" value="6">
+                <input id="opMult" class="btn btn-default CalcButton" type="button" value="*">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style="display:inline-block">
+                <input id="digit7" class="btn btn-default CalcButton" type="button" value="7">
+                <input id="digit8" class="btn btn-default CalcButton" type="button" value="8">
+                <input id="digit9" class="btn btn-default CalcButton" type="button" value="9">
+                <input id="opSub" class="btn btn-default CalcButton" type="button" value="-">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style="display:inline-block">
+                <input id="digit0" class="btn btn-default" style="width:72px" type="button" value="0">
+                <input id="decPoint" class="btn btn-default CalcButton" type="button" value=".">
+                <input id="opAdd" class="btn btn-default CalcButton" type="button" value="+">
+            </div>
+        </td>
+    </tr>
+</table>
