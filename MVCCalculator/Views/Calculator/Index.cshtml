@@ -1,78 +1,87 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "MVCCalculator";
 }
 
-<h2>Index</h2>
+    <div class="col-centered">
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text"/>
+                </td>
+                <td colspan="1">
+                    @using (Html.BeginForm("Akcja", "Calculator", FormMethod.Post))
+                    {
+                    <button class="mybutton" type="submit" name="s" value="C">C</button>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="mybutton" type="button">7</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">8</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">9</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">/</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">sqrt</button>
+                </td>
+            </tr>
 
-@*<table class="table-responsive table-condensed">
-    <tr>
-        <td>
-            <div style="display:inline-block">
-                @Html.Label("Results")
-                @Html.TextBox("Results", "", new { @readonly = "readonly" })
+            <tr>
+                <td>
+                    <button class="mybutton" type="button">4</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">5</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">6</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">*</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">%</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="mybutton" type="button">1</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">2</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">3</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">-</button>
+                </td>
+                <td rowspan="2">
+                    <button class="mybutton" type="button" id="eqBtn">=</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="mybutton" type="button">0</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">.</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">+/-</button>
+                </td>
+                <td>
+                    <button class="mybutton" type="button">+</button>
+                </td>
+            </tr>
+        </table>
 
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div style="display:inline-block">
-                @Html.Label("Equation")
-                @Html.TextBox("Equation", "", new { @readonly = "readonly" })
-
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div style="display:inline-block">
-                <input id="opMemAdd" class="btn btn-default CalcButton" type="button" value="M+">
-                <input id="opMemRecall" class="btn btn-default CalcButton" type="button" value="MR">
-                <input id="opClear" class="btn btn-default CalcButton" type="button" value="C">
-                <input id="opEval" class="btn btn-default CalcButton" type="button" value="=">
-            </div>
-        </td>
-
-    </tr>
-    <tr>
-        <td>
-            <div style="display:inline-block">
-                <input id="digit1" class="btn btn-default CalcButton" type="button" value="1">
-                <input id="digit2" class="btn btn-default CalcButton" type="button" value="2">
-                <input id="digit3" class="btn btn-default CalcButton" type="button" value="3">
-                <input id="opDiv" class="btn btn-default CalcButton" type="button" value="/">
-
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div style="display:inline-block">
-                <input id="digit4" class="btn btn-default CalcButton" type="button" value="4">
-                <input id="digit5" class="btn btn-default CalcButton" type="button" value="5">
-                <input id="digit6" class="btn btn-default CalcButton" type="button" value="6">
-                <input id="opMult" class="btn btn-default CalcButton" type="button" value="*">
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div style="display:inline-block">
-                <input id="digit7" class="btn btn-default CalcButton" type="button" value="7">
-                <input id="digit8" class="btn btn-default CalcButton" type="button" value="8">
-                <input id="digit9" class="btn btn-default CalcButton" type="button" value="9">
-                <input id="opSub" class="btn btn-default CalcButton" type="button" value="-">
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div style="display:inline-block">
-                <input id="digit0" class="btn btn-default" style="width:72px" type="button" value="0">
-                <input id="decPoint" class="btn btn-default CalcButton" type="button" value=".">
-                <input id="opAdd" class="btn btn-default CalcButton" type="button" value="+">
-            </div>
-        </td>
-    </tr>
-</table>*@
+    </div>

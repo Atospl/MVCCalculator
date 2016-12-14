@@ -17,8 +17,29 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+input, select, textarea {
+    width: 400px;
+    height: 100px;
+    margin: 0 0 0 0;
+    text-align: right;
+    font-size: 50pt;
+}
+
+.col-centered {
+    width: 500px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+}
+
+.mybutton {
+    width: 100px;
+    height: 100px;
+}
+
+#eqBtn {
+    width: 100px;
+    height: 200px;
 }
