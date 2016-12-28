@@ -8,7 +8,7 @@ namespace MVCCalculator.Other
 {
     public interface IStateManager<T>
     {
-        void save(string name, T state);
-        T load(string name);
+        void Save(string name, T state);
+        T Load(string name);
     }
 }

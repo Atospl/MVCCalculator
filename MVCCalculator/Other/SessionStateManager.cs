@@ -7,11 +7,11 @@ namespace MVCCalculator.Other
 {
     public class SessionStateManager<T> : IStateManager<T>
     {
-        public void save(string name, T state)
+        public void Save(string name, T state)
         {
             HttpContext.Current.Session[name] = state;
         }
-        public T load(string name)
+        public T Load(string name)
         {
             return (T)HttpContext.Current.Session[name];
         }

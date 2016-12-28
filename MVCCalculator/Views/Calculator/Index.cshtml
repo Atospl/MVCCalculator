@@ -1,4 +1,5 @@
-﻿
+﻿@model MVCCalculator.Models.Calculator
+
 @{
     ViewBag.Title = "MVCCalculator";
 }
@@ -7,42 +8,69 @@
         <table>
             <tr>
                 <td colspan="4">
-                    <input type="text"/>
+                    @*@using (Html.BeginForm()) TODO DODAJ KLASE UNIEMOZLIWIAJACA PISANIE
+                    {*@
+                    @Html.TextBoxFor(m => m.Display)
+                    @*}*@
                 </td>
                 <td colspan="1">
-                    @using (Html.BeginForm("Akcja", "Calculator", FormMethod.Post))
+                    @using (Html.BeginForm("Clear", "Calculator", FormMethod.Post))
                     {
-                    <button class="mybutton" type="submit" name="s" value="C">C</button>
+                        <button class="mybutton" type="submit">C</button>
                     }
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button class="mybutton" type="button">7</button>
+                    @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
+                    {
+                        <button class="mybutton" type="submit" name="val" value="7">7</button>
+                    }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">8</button>
+                    @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
+                    {
+                        <button class="mybutton" type="submit" name="val" value="8">8</button>
+                    }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">9</button>
+                    @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
+                    {
+                        <button class="mybutton" type="submit" name="val" value="9">9</button>
+                    }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">/</button>
+                    @using (Html.BeginForm("TakeOperator", "Calculator", FormMethod.Post))
+                    {
+                    <button class="mybutton" type="submit" name="op" value="/">/</button>
+                    }
                 </td>
                 <td>
+                    @using (Html.BeginForm("TakeOperator", "Calculator", FormMethod.Post))
+                    {
                     <button class="mybutton" type="button">sqrt</button>
+                    }
                 </td>
             </tr>
 
             <tr>
                 <td>
-                    <button class="mybutton" type="button">4</button>
+                    @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
+                    {
+                        <button class="mybutton" type="submit" name="val" value="4">4</button>
+                    }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">5</button>
+                    @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
+                    {
+                        <button class="mybutton" type="submit" name="val" value="5">5</button>
+                    }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">6</button>
+                    @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
+                    {
+                        <button class="mybutton" type="submit" name="val" value="6">6</button>
+                    }
                 </td>
                 <td>
                     <button class="mybutton" type="button">*</button>
@@ -53,13 +81,22 @@
             </tr>
             <tr>
                 <td>
-                    <button class="mybutton" type="button">1</button>
+                    @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
+                    {
+                        <button class="mybutton" type="submit" name="val" value="1">1</button>
+                    }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">2</button>
+                    @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
+                    {
+                        <button class="mybutton" type="submit" name="val" value="2">2</button>
+                    }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">3</button>
+                    @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
+                    {
+                        <button class="mybutton" type="submit" name="val" value="3">3</button>
+                    }
                 </td>
                 <td>
                     <button class="mybutton" type="button">-</button>
@@ -70,7 +107,10 @@
             </tr>
             <tr>
                 <td>
-                    <button class="mybutton" type="button">0</button>
+                    @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
+                    {
+                        <button class="mybutton" type="submit" name="val" value="0">0</button>
+                    }
                 </td>
                 <td>
                     <button class="mybutton" type="button">.</button>
