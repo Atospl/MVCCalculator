@@ -46,9 +46,9 @@
                     }
                 </td>
                 <td>
-                    @using (Html.BeginForm("TakeOperator", "Calculator", FormMethod.Post))
+                    @using (Html.BeginForm("Sqrt", "Calculator", FormMethod.Post))
                     {
-                    <button class="mybutton" type="button">sqrt</button>
+                    <button class="mybutton" type="submit" name="op" value="sqrt">sqrt</button>
                     }
                 </td>
             </tr>
@@ -73,10 +73,16 @@
                     }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">*</button>
+                    @using (Html.BeginForm("TakeOperator", "Calculator", FormMethod.Post))
+                    {
+                    <button class="mybutton" type="submit" name="op" value="*">*</button>
+                    }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">%</button>
+                    @using (Html.BeginForm("Percent", "Calculator", FormMethod.Post))
+                    {
+                    <button class="mybutton" type="submit">%</button>
+                    }
                 </td>
             </tr>
             <tr>
@@ -99,10 +105,16 @@
                     }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">-</button>
+                    @using (Html.BeginForm("TakeOperator", "Calculator", FormMethod.Post))
+                    {
+                    <button class="mybutton" type="submit" name="op" value="-">-</button>
+                    }
                 </td>
                 <td rowspan="2">
-                    <button class="mybutton" type="button" id="eqBtn">=</button>
+                    @using (Html.BeginForm("TakeOperator", "Calculator", FormMethod.Post))
+                    {
+                    <button class="mybutton" type="submit" name="op" value="=" id="eqBtn">=</button>
+                    }
                 </td>
             </tr>
             <tr>
@@ -113,13 +125,22 @@
                     }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">.</button>
+                    @using (Html.BeginForm("TakeDot", "Calculator", FormMethod.Post))
+                    {
+                    <button class="mybutton" type="submit">.</button>
+                    }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">+/-</button>
+                    @using (Html.BeginForm("ChangeSign", "Calculator", FormMethod.Post))
+                    {
+                    <button class="mybutton" type="submit" name="op" value="+/-">+/-</button>
+                    }
                 </td>
                 <td>
-                    <button class="mybutton" type="button">+</button>
+                    @using (Html.BeginForm("TakeOperator", "Calculator", FormMethod.Post))
+                    {
+                        <button class="mybutton" type="submit" name="op" value="+">+</button>
+                    }
                 </td>
             </tr>
         </table>

@@ -12,14 +12,22 @@ namespace MVCCalculator.Models
 {
     public class Calculator
     {
+        private string display;
+
         public Calculator()
         {
             CurrVal = 0;
-            Display = "";
+            display = "";
         }
-        public string Display { get; set; }
+        public string Display 
+        {
+            get {  return display; }
+
+            set { if (value.Length > 9) display = value.Substring(0, 9); else display = value; }
+        }
         public decimal CurrVal { get; set; }
         public string Operator { get; set; }
-        public string Color { get; set; }
+
+        public bool Start = true;
     }
 }
