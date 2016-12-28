@@ -19,6 +19,7 @@ namespace MVCCalculator.Models
             CurrVal = 0;
             display = "";
             Operator = "";
+            ButtonsEnabled = true;
         }
         public string Display 
         {

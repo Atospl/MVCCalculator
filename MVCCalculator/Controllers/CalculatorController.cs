@@ -22,7 +22,8 @@ namespace MVCCalculator.Controllers
         // GET: Calculator
         public ViewResult Index()
         {
-            return View();
+            Calculator model = GetModel();
+            return View(model);
         }
 
         public ViewResult Clear()

@@ -24,31 +24,31 @@
                 <td>
                     @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
                     {
-                        <button class="mybutton" type="submit" name="val" value="7">7</button>
+                        <button class="mybutton" type="submit" name="val" value="7"  @((Model.ButtonsEnabled == false) ? "disabled" : "")>7</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
                     {
-                        <button class="mybutton" type="submit" name="val" value="8">8</button>
+                        <button class="mybutton" type="submit" name="val" value="8" @((Model.ButtonsEnabled == false) ? "disabled" : "")>8</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
                     {
-                        <button class="mybutton" type="submit" name="val" value="9">9</button>
+                        <button class="mybutton" type="submit" name="val" value="9" @((Model.ButtonsEnabled == false) ? "disabled" : "")>9</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("TakeOperator", "Calculator", FormMethod.Post))
                     {
-                    <button class="mybutton" type="submit" name="op" value="/">/</button>
+                    <button class="mybutton" type="submit" name="op" value="/" @((Model.ButtonsEnabled == false) ? "disabled" : "")>/</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("Sqrt", "Calculator", FormMethod.Post))
                     {
-                    <button class="mybutton" type="submit" name="op" value="sqrt">sqrt</button>
+                    <button class="mybutton" type="submit" name="op" value="sqrt" @((Model.ButtonsEnabled == false) ? "disabled" : "")>sqrt</button>
                     }
                 </td>
             </tr>
@@ -57,31 +57,31 @@
                 <td>
                     @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
                     {
-                        <button class="mybutton" type="submit" name="val" value="4">4</button>
+                        <button class="mybutton" type="submit" name="val" value="4" @((Model.ButtonsEnabled == false) ? "disabled" : "")>4</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
                     {
-                        <button class="mybutton" type="submit" name="val" value="5">5</button>
+                        <button class="mybutton" type="submit" name="val" value="5" @((Model.ButtonsEnabled == false) ? "disabled" : "")>5</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
                     {
-                        <button class="mybutton" type="submit" name="val" value="6">6</button>
+                        <button class="mybutton" type="submit" name="val" value="6" @((Model.ButtonsEnabled == false) ? "disabled" : "")>6</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("TakeOperator", "Calculator", FormMethod.Post))
                     {
-                    <button class="mybutton" type="submit" name="op" value="*">*</button>
+                    <button class="mybutton" type="submit" name="op" value="*" @((Model.ButtonsEnabled == false) ? "disabled" : "")>*</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("Percent", "Calculator", FormMethod.Post))
                     {
-                    <button class="mybutton" type="submit">%</button>
+                    <button class="mybutton" type="submit" @((Model.ButtonsEnabled == false) ? "disabled" : "")>%</button>
                     }
                 </td>
             </tr>
@@ -89,31 +89,31 @@
                 <td>
                     @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
                     {
-                        <button class="mybutton" type="submit" name="val" value="1">1</button>
+                        <button class="mybutton" type="submit" name="val" value="1" @((Model.ButtonsEnabled == false) ? "disabled" : "")>1</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
                     {
-                        <button class="mybutton" type="submit" name="val" value="2">2</button>
+                        <button class="mybutton" type="submit" name="val" value="2" @((Model.ButtonsEnabled == false) ? "disabled" : "")>2</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
                     {
-                        <button class="mybutton" type="submit" name="val" value="3">3</button>
+                        <button class="mybutton" type="submit" name="val" value="3" @((Model.ButtonsEnabled == false) ? "disabled" : "")>3</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("TakeOperator", "Calculator", FormMethod.Post))
                     {
-                    <button class="mybutton" type="submit" name="op" value="-">-</button>
+                    <button class="mybutton" type="submit" name="op" value="-" @((Model.ButtonsEnabled == false) ? "disabled" : "")>-</button>
                     }
                 </td>
                 <td rowspan="2">
                     @using (Html.BeginForm("TakeOperator", "Calculator", FormMethod.Post))
                     {
-                    <button class="mybutton" type="submit" name="op" value="=" id="eqBtn">=</button>
+                    <button class="mybutton" type="submit" name="op" value="=" id="eqBtn" @((Model.ButtonsEnabled == false) ? "disabled" : "")>=</button>
                     }
                 </td>
             </tr>
@@ -121,25 +121,25 @@
                 <td>
                     @using (Html.BeginForm("TakeNumber", "Calculator", FormMethod.Post))
                     {
-                        <button class="mybutton" type="submit" name="val" value="0">0</button>
+                        <button class="mybutton" type="submit" name="val" value="0" @((Model.ButtonsEnabled == false) ? "disabled" : "")>0</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("TakeDot", "Calculator", FormMethod.Post))
                     {
-                    <button class="mybutton" type="submit">.</button>
+                    <button class="mybutton" type="submit" @((Model.ButtonsEnabled == false) ? "disabled" : "")>.</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("ChangeSign", "Calculator", FormMethod.Post))
                     {
-                    <button class="mybutton" type="submit" name="op" value="+/-">+/-</button>
+                    <button class="mybutton" type="submit" name="op" value="+/-" @((Model.ButtonsEnabled == false) ? "disabled" : "")>+/-</button>
                     }
                 </td>
                 <td>
                     @using (Html.BeginForm("TakeOperator", "Calculator", FormMethod.Post))
                     {
-                        <button class="mybutton" type="submit" name="op" value="+">+</button>
+                        <button class="mybutton" type="submit" name="op" value="+" @((Model.ButtonsEnabled == false) ? "disabled" : "")>+</button>
                     }
                 </td>
             </tr>
