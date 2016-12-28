@@ -10,7 +10,7 @@
                 <td colspan="4">
                     @*@using (Html.BeginForm()) TODO DODAJ KLASE UNIEMOZLIWIAJACA PISANIE
                     {*@
-                    @Html.TextBoxFor(m => m.Display)
+                    @Html.TextBoxFor(m => m.Display, new { disabled = "true" })
                     @*}*@
                 </td>
                 <td colspan="1">
