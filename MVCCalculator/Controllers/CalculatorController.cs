@@ -28,7 +28,9 @@ namespace MVCCalculator.Controllers
         public ViewResult Clear()
         {
             Calculator model = GetModel();
-            model.Display = "alla";
+            model.Display = "";
+            model.CurrVal = 0;
+            model.ButtonsEnabled = true;
             return View("Index", model);
         }
 
@@ -58,7 +60,15 @@ namespace MVCCalculator.Controllers
                 return View("Index", model);
             if (!model.Operator.Equals(""))
             {
-                model.Display = Calculate(model.CurrVal, Decimal.Parse(model.Display), model.Operator);
+                try
+                {
+                    model.Display = Calculate(model.CurrVal, Decimal.Parse(model.Display), model.Operator);
+                }
+                catch(Exception)
+                {
+                    BlockLayout(model, "zero div!");
+                    return View("Index", model);
+                }
                 model.CurrVal = Decimal.Parse(model.Display);
                 model.Operator = op;
                 model.Start = true;
@@ -97,7 +107,7 @@ namespace MVCCalculator.Controllers
                     result = secondVal;
                 if (result < 0)
                 {
-                    BlockLayout();
+                    BlockLayout(model, "neg sqrt!");
                     return View("Index", model);
                 }
                 model.Display = ((decimal)Math.Sqrt(result)).ToString();
@@ -109,12 +119,12 @@ namespace MVCCalculator.Controllers
 
             if (model.CurrVal < 0)
             {
-                BlockLayout();
+                BlockLayout(model, "neg sqrt!");
             }
             else
                 model.Display = (Math.Sqrt((double)model.CurrVal)).ToString();
 
-
+            model.Start = true;
             return View("Index", model);
         }
 
@@ -135,6 +145,7 @@ namespace MVCCalculator.Controllers
             if (model.Operator.Equals(""))
             {
                 model.Display = (decimal.Parse(model.Display) / 100).ToString();
+                model.Start = true;
                 return View("Index", model);
             }
             if (model.Operator.Equals("+") || model.Operator.Equals("-"))
@@ -154,6 +165,39 @@ namespace MVCCalculator.Controllers
         }
         #region private members
 
+
+        public string Calculate(decimal FirstVal, decimal SecondVal, string op)
+        {
+            var model = GetModel();
+            string res = "0.0";
+            switch (op)
+            {
+                case "+":
+
+                    res = (FirstVal + SecondVal).ToString();
+                    break;
+                case "-":
+                    res = (FirstVal - SecondVal).ToString();
+                    break;
+                case "*":
+                    res = (FirstVal * SecondVal).ToString();
+                    break;
+                case "/":
+                    if (SecondVal == 0.0M)
+                    {
+                        throw new Exception();
+                        //BlockLayout(model, "zero division");
+                        //break;
+                    }
+                    res = (FirstVal / SecondVal).ToString();
+                    break;
+                case "=":
+                    res = (FirstVal).ToString();
+                    break;
+            }
+            return res;
+        }
+
         /// <summary>
         /// Returns session model, initializes new if not available
         /// </summary>
@@ -167,6 +211,12 @@ namespace MVCCalculator.Controllers
                 stateManager.Save("model", model);
             }
             return model;
+        }
+
+        public virtual void BlockLayout(Calculator model, string cause)
+        {
+            model.Display = "ERR" + " " + cause;
+            model.ButtonsEnabled = false;
         }
         #endregion private members
     }
